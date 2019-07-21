@@ -8,5 +8,12 @@
 </head>
 <body>
     <h1>index page</h1>
+
+
+    @foreach($arrs as $arr)
+
+
+    <div>{{$arr->name}} </div>
+    @endforeach
 </body>
 </html>
