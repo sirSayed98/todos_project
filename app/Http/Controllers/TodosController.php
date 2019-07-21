@@ -11,7 +11,7 @@ class TodosController extends Controller
     public function index(){
 
 
-        return view('todos.index')->with('arrs',todos::all());
+        return view('todos.index')->with('todos',todos::all());
     }
 
 }
