@@ -11,12 +11,15 @@
           <div class="card-header">
             Todos
           </div>
-    
           <div class="card-body">
             <ul class="list-group">
               @foreach($todos as $todo)
                 <li class="list-group-item">
                   {{ $todo->name }}
+
+                  @if (!$todo->compleated)
+                  <a class="btn btn-secondary ml-3 float-right " href="/todos/complete/{{$todo->id}}">Copmplete </a>
+                  @endif                  
                   <a class="btn btn-success ml-3 float-right " href="/todos/edit/{{$todo->id}}">Edit </a>
                   <a  href="/todos/{{$todo->id}}" class="btn btn-primary  float-right">View</a>
                   

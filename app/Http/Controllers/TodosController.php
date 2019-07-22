@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\todos;
+use Alert;
 
 class TodosController extends Controller
 {
@@ -52,7 +53,7 @@ class TodosController extends Controller
 
         $todo->compleated = false;
         $todo->save();
-
+        Alert::success('Todos Created', 'Done');
         return redirect('/todos');
     }
 
@@ -75,17 +76,25 @@ class TodosController extends Controller
         $todo_edit->name = $data['name'];
         $todo_edit->describtion = $data['describtion'];
         $todo_edit->save();
+        Alert::success('Todos has been updated', 'done');
         return redirect('/todos');
     }
 
     public function delete($id)
     {
 
-        $todo=todos::find($id);
+        $todo = todos::find($id);
 
         $todo->delete();
+        Alert::warning('Todos have been deleted ', 'Done');
         return redirect('/todos');
+    }
+    public function finish( todos $todo)
+    {
 
 
-     }
+        $todo->compleated = true;
+        $todo->save();
+        return redirect('/todos');
+    }
 }
