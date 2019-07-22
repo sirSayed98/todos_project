@@ -15,7 +15,10 @@
             <div class="card-body">
                 {{ $data->describtion }}
             </div>
-            <a class="btn btn-primary" href="/todos/edit/{{$data->id}}">Edit </a>
+            <a class="btn btn-success my-3" href="/todos/edit/{{$data->id}}">Edit </a>
+            <a  href="/todos/delete/{{$data->id}}" class="btn btn-danger ">Delete</a>
+                
+            
         </div>
     </div>
 </div>

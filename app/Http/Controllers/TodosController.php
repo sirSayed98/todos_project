@@ -77,4 +77,15 @@ class TodosController extends Controller
         $todo_edit->save();
         return redirect('/todos');
     }
+
+    public function delete($id)
+    {
+
+        $todo=todos::find($id);
+
+        $todo->delete();
+        return redirect('/todos');
+
+
+     }
 }
