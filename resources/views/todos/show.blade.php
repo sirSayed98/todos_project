@@ -15,6 +15,7 @@
             <div class="card-body">
                 {{ $data->describtion }}
             </div>
+            <a class="btn btn-primary" href="/todos/edit/{{$data->id}}">Edit </a>
         </div>
     </div>
 </div>
